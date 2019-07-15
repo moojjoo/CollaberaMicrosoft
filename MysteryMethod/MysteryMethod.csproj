@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{78D1F65D-0787-4016-A35D-6DC083F91751}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Mystery_Method</RootNamespace>
-    <AssemblyName>Mystery Method</AssemblyName>
+    <RootNamespace>MysteryMethod</RootNamespace>
+    <AssemblyName>MysteryMethod</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

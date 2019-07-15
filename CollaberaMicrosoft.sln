@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncrementDecrement", "Incre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertToNumber", "ConvertToNumber\ConvertToNumber.csproj", "{B4AAFEF7-7B20-4A87-A739-4269E878324F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysteryMethod", "Mystery Method\MysteryMethod.csproj", "{78D1F65D-0787-4016-A35D-6DC083F91751}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysteryMethod", "MysteryMethod\MysteryMethod.csproj", "{78D1F65D-0787-4016-A35D-6DC083F91751}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortProductsbyPriority", "SortProductsbyPriority\SortProductsbyPriority.csproj", "{3020DEBB-4A02-4387-A398-6940320F2B16}"
 EndProject
