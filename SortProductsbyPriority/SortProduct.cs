@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SortProductsbyPriority
+namespace SortProductbyPriority
 {
-    //    Products are identified by alphanumeric codes.Each code is stored as a 
-    //string. We have three types of products: high priority, medium priority, and 
+    //    Product are identified by alphanumeric codes.Each code is stored as a 
+    //string. We have three types of Product: high priority, medium priority, and 
     //low priority.Given an array of product codes, sort the array so that the highest 
-    //priority products come at the beginning of the array, the medium priority 
-    //products come in the middle, and the low priority products come at the end.
+    //priority Product come at the beginning of the array, the medium priority 
+    //Product come in the middle, and the low priority Product come at the end.
 
     //Within a priority group, order does not matter. You are given a priority function which, given a 
     //product code, 
@@ -21,7 +21,7 @@ namespace SortProductsbyPriority
     //private int GetPriority(string productCode).
     //You don’t need to implement this function.
     //Please Implement:
-    //public void OrderProductsByPriority(string[] productCodes)
+    //public void OrderProductByPriority(string[] productCode)
 
 
 
@@ -29,63 +29,74 @@ namespace SortProductsbyPriority
     {
         public static void Main(string[] args)
         {
-            Products product1 = new Products();
-            product1.productCodes = "12345";
+            Product product0 = new Product();
+            product0.productCode = "12347";
+            product0.productPriority = Priority.Low;
+
+            Product product1 = new Product();
+            product1.productCode = "12345";
             product1.productPriority = Priority.High;
 
-            Products product2 = new Products();
-            product1.productCodes = "12444";
-            product1.productPriority = Priority.Medum;
+            Product product2 = new Product();
+            product2.productCode = "12444";
+            product2.productPriority = Priority.Medum;
 
-            Products product3 = new Products();
-            product1.productCodes = "12555";
-            product1.productPriority = Priority.High;
+            Product product3 = new Product();
+            product3.productCode = "12555";
+            product3.productPriority = Priority.High;
 
-            Products product4 = new Products();
-            product1.productCodes = "12355";
-            product1.productPriority = Priority.Low;
+            Product product4 = new Product();
+            product4.productCode = "12355";
+            product4.productPriority = Priority.Low;
 
-            Products product5 = new Products();
-            product1.productCodes = "12347";
-            product1.productPriority = Priority.Low;
+            Product[] Product = new Product[5];
+            Product[0] = product0;
+            Product[1] = product1;
+            Product[2] = product2;
+            Product[3] = product3;
+            Product[4] = product4;
+           
 
+            Product p = new Product();
+            p.OrderProductByPriority(Product);
 
-
-            Products[] products = new Products[4];
-            products[2] = products[2];
-            products[4] = products[3];
-            products[5] = products[4];
-            products[5] = products[4];
-
-
-
-            products = OrderProductsByPriority(Products products);
-
-
+            Console.ReadLine();
+            
         }
 
-        public List<Products> OrderProductsByPriority(Products products)
-        {
-            products
 
-
-
-            return products;
-
-        }
     }
 
+    //RBD - Note I would usually move these to different classes...
+
+    //Use and enum for readability
     public enum Priority{
         High = 1,
         Medum,
         Low
     }
 
-    public class Products
+
+    //Lot easiter to create a Product class for readablity
+    public class Product
     {
-        public string productCodes { get; set; }
+        public string productCode { get; set; }
         public Priority productPriority { get; set; }
 
+
+        //Create a method in the Product class to use the power of generics
+        public void OrderProductByPriority(Product[] Product)
+        {
+            var orderProductHighToLow = from p in Product
+                                         orderby p.productPriority
+                                         select p;
+
+            foreach(var product in orderProductHighToLow)
+            {
+                Console.WriteLine("Order Code = {0} and Priority = {1}", product.productCode, product.productPriority);
+                Console.WriteLine();
+            }
+        }
     }
 
 

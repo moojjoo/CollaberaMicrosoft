@@ -1,28 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mystery_Method
 {
     public class MystryMethod
     {
+        
+
         public static void Main(string[] args)
         {
-            // Populate Person class with name and aquatiances
-            Person p = new Person();
-            
-            p.Name = "Robert";
-            p.Acquaintances. = { p.Name = "Tom", p.Name="Tommy"};
-            
-
-
-
-
-
-
-
+                                           
         }
 
         //3. Mystery Method               
@@ -30,23 +17,21 @@ namespace Mystery_Method
         //potential bugs and possible fixes.
 
         /// <summary>
-        /// public class P accessesible to anyone who has access to the .exe
+        /// public class Person accessesible to anyone who has access to the .exe
         /// </summary>
+        /// 
+
+        //First change the class P to Person so it is more readable
         public class Person
         {
             public string Name;
             public Person[] Acquaintances;
 
-            public Person()
-            {
-
-            }
-
             public Person(string name, Person[] acquaintances)
             {
-                if (IsNameNullOrWhiteSpace(name)) //RBD change to call Mystery
+                if (String.IsNullOrWhiteSpace(name))
                 {
-                    throw new ArgumentException("Name cannot be null o white space.",
+                    throw new ArgumentException("Name cannot be null or white space.",
                      "name");
                 }
 
@@ -54,19 +39,29 @@ namespace Mystery_Method
                 this.Acquaintances = acquaintances;
             }
 
-            public bool IsNameNullOrWhiteSpace(string name)
+            // Mystery class tells where a name is in the acquaintances array
+            public bool Mystery(string name)
             {
                 if (String.IsNullOrWhiteSpace(name))
                 {
-                    return true;
+                    throw new ArgumentException("Name cannot be null or white space.",
+                     "name");
                 }
 
+                //Because of the change of the name of the class from P to Person this
+                //refactored and fixed the naming issue in the myStack object initialization
+
+                //The code below is using a foreach loop to Push each person on the acquitance 
+                //stack
                 Stack<Person> myStack = new Stack<Person>();
                 foreach (Person acquaintance in this.Acquaintances)
                 {
                     myStack.Push(acquaintance);
                 }
 
+
+                //Next it will return true or false if the Person name is equal to an aquitance in the 
+                //stack
                 do
                 {
                     var person = myStack.Pop();
@@ -86,6 +81,7 @@ namespace Mystery_Method
                 return false;
             }
         }
+
 
     }
 }
