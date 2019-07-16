@@ -15,6 +15,7 @@ Collabera Questions to be answered to get Microsoft Interview
 
     1. Provide a list of customers who have ever purchased
     ```
+		-- Provide a list of customers who have ever purchased
         SELECT DISTINCT c.LastName, c.FirstName FROM Customer c RIGHT JOIN [Order] o 
         ON c.CustomerID = o.CustomerID
     ```
